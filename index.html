@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CPBO is an extension of Preferential Bayesian Optimization (PBO) that incorporates inequality constraints, and we demonstrate its application in banner ad design.">
+  <meta name="keywords" content="Bayesian optimization, human-in-the-loop, preferential Bayesian optimization, constrained optimization, banner ad, click-through rate, CPBO">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Constrained Preferential Bayesian Optimization</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="font-size: 2.8rem">
+            Constrained Preferential Bayesian Optimization<br>
+            and Its Application in Banner Ad Design
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Koki Iwai<sup>1</sup>,</span>
+            <span class="author-block">Yusuke Kumagae<sup>1</sup>,</span>
+            <a href="https://koyama.xyz/" target="_blank" rel="noopener">Yuki Koyama</a><sup>2</sup></span>
+            <a href="https://staff.aist.go.jp/masahiro.hamasaki/index-e.html" target="_blank" rel="noopener">Masahiro Hamasaki</a><sup>2</sup></span>
+            <a href="https://staff.aist.go.jp/m.goto/index-e.html" target="_blank" rel="noopener">Masataka Goto</a><sup>2</sup></span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup><a href="https://www.hakuhodody-holdings.co.jp/english/" target="_blank" rel="noopener">Hakuhodo DY Holdings Inc.,</a></span>
+            <span class="author-block"><sup>2</sup>National Institute of Advanced Industrial Science and Technology (AIST)</span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">{koki.iwai, yusuke.kumagae}[at]hakuhodo.co.jp</span>
+          </div>
+          <div class="column has-text-centered">
+            <span class="link-block">
+  <a href="https://arxiv.org/pdf/2505.10954" class="external-link button is-normal is-rounded is-dark">
+    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+    <span>Paper</span>
+  </a>
+</span>
+<span class="link-block">
+                <a href="https://arxiv.org/abs/2505.10954" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="has-text-centered">
+        <img src="./static/images/framework.png" alt="Designer-in-the-loop framework" style="max-width:100%; height:auto;">
+      </div>
+      <h2 class="subtitle has-text-centered">
+        Figure: Concept of our designer-in-the-loop banner ad design framework.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Preferential Bayesian optimization (PBO) is a variant of Bayesian optimization that observes relative preferences (e.g., pairwise comparisons) instead of direct objective values, making it especially suitable for human-in-the-loop scenarios. However, real-world optimization tasks often involve inequality constraints, which existing PBO methods have not yet addressed. To fill this gap, we propose constrained preferential Bayesian optimization (CPBO), an extension of PBO that incorporates inequality constraints for the first time. Specifically, we present a novel acquisition function for this purpose. Our technical evaluation shows that our CPBO method successfully identifies optimal solutions by focusing on exploring feasible regions. As a practical application, we also present a designer-in-the-loop system for banner ad design using CPBO, where the objective is the designer’s subjective preference, and the constraint ensures a target predicted click-through rate. We conducted a user study with professional ad designers, demonstrating the potential benefits of our approach in guiding creative design under real-world constraints.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method: Constrained Preferential Bayesian Optimization (CPBO)</h2>
+        <div class="content has-text-justified">
+          <p>We aim to solve a constrained optimization problem of the form:</p>
+          <p>
+            \[
+              x^* = \arg\max_{x \in \mathcal{X}} f(x) \quad \text{s.t.} \quad c(x) \geq \lambda
+            \]
+          </p>
+          <p>
+            where \( f(x) \) is a black-box objective function observed via relative preferences (e.g., a designer’s subjective preference), and
+            \( c(x) \) is a black-box constraint function (e.g., design performance) with a threshold \( \lambda \). CPBO extends
+            PBO by incorporating such inequality constraints.
+          </p>          
+          <p>
+            To implement CPBO, we propose a new acquisition function called <strong>EUBOC</strong> (Expected Utility of the Best Option with Constraints), which integrates EUBO — one of the state-of-the-art acquisition functions for PBO — with the idea of Expected Improvement with Constraints (EIC):
+
+          </p>
+          <p>
+            \[
+              \text{EUBOC}(x^{(i)}, x^{(j)}) =
+              \mathcal{P}(c(x^{(i)}) \geq \lambda,\, c(x^{(j)}) \geq \lambda)
+              \cdot \text{EUBO}(x^{(i)}, x^{(j)}).
+            \]
+          </p>          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Application: A Designer-in-the-Loop Banner Ad Design Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+            We apply our CPBO technique to a practical setting of banner ad design. In this framework, a designer iteratively selects preferred candidates among ad design variations, while the system ensures that the predicted click-through rate (CTR) satisfies a constraint.
+          </p>
+          <p>
+            The system maintains surrogate models for both preference (based on designer's selections) and CTR (based on a prediction model). At each step, a new pair of designs is proposed by maximizing the EUBOC acquisition function, enabling optimization that respects both subjective aesthetics and business goals.
+          </p>
+        </div>
+        <div class="has-text-centered">
+  <video id="demo-video" autoplay muted loop playsinline controls width="100%">
+    <source src="./static/videos/ditl_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{iwai2025cpbo,
+  author     = {Iwai, Koki and Kumagae, Yusuke and Koyama, Yuki and Hamasaki, Masahiro and Goto, Masataka},
+  title      = {Constrained Preferential Bayesian Optimization and Its Application in Banner Ad Design},
+  booktitle  = {Proceedings of the Thirty-Fourth International Joint Conference on Artificial Intelligence, {IJCAI-25}},
+  year       = {2025}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+  <a class="icon-link" href="https://arxiv.org/pdf/2505.10954">
+    <i class="fas fa-file-pdf"></i>
+  </a>
+  <a class="icon-link" href="https://arxiv.org/abs/2505.10954">
+    <i class="ai ai-arxiv"></i>
+  </a>
+</div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website source code based on the <a href="https://nerfies.github.io/">Nerfies project page</a>. If you want to reuse their <a href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately. If you want to reuse their source code, please credit them appropriately.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
